@@ -20,7 +20,7 @@ class Reader(object):
         print("Connecting...", end=' ')
         sys.stdout.flush()
 
-        self.requester.connect(True)
+        self.requester.connect(True, 'random')
         print("OK!")
 
     def request_data(self):
