@@ -13,8 +13,8 @@ from bluetooth.ble import GATTRequester
 class Reader(object):
     def __init__(self, address):
         self.requester = GATTRequester(address, False)
-        self.connect()
-        self.request_data()
+        #self.connect()
+        #self.request_data()
 
     def connect(self):
         print("Connecting...", end=' ')
@@ -23,7 +23,7 @@ class Reader(object):
         self.requester.connect(True, 'random')
         print("OK!")
 
-    def request_data(self):
+    def requestName(self):
         data = self.requester.read_by_uuid(
                 "00002a00-0000-1000-8000-00805f9b34fb")[0]
         try:
@@ -37,5 +37,7 @@ if __name__ == '__main__':
         print("Usage: {} <addr>".format(sys.argv[0]))
         sys.exit(1)
 
-    Reader(sys.argv[1])
+    reader = Reader(sys.argv[1])
+    reader.connect()
+    reader.requestName()
     print("Done.")
