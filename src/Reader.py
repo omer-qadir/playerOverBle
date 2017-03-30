@@ -31,13 +31,23 @@ class Reader(object):
         except AttributeError:
             print("Device name: " + data)
 
+    def request_data(self, handle=0x01, index=0):
+        data = self.requester.read_by_handle(handle)[index]
+
+        print("bytes received:", end=' ')
+        for b in data:
+            print(hex(ord(b)), end=' ')
+        print("")
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: {} <addr>".format(sys.argv[0]))
+        # C5:90:D7:25:09:80
         sys.exit(1)
 
     reader = Reader(sys.argv[1])
+    # reader = Reader.Reader("C5:90:D7:25:09:80")
     reader.connect()
     reader.requestName()
     print("Done.")
