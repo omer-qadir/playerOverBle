@@ -11,8 +11,11 @@ from bluetooth.ble import GATTRequester
 
 
 class Reader(object):
+    bleGattPostfix = "-0000-1000-8000-00805f9b34fb"
+    bleGapDeviceName = "00002a00"
     def __init__(self, address):
         self.requester = GATTRequester(address, False)
+        # print(self.bleGapDeviceName + self.bleGattPostfix)
         #self.connect()
         #self.request_data()
 
@@ -24,8 +27,10 @@ class Reader(object):
         print("OK!")
 
     def requestName(self):
+        # data = self.requester.read_by_uuid(
+        #         "00002a00-0000-1000-8000-00805f9b34fb")[0]
         data = self.requester.read_by_uuid(
-                "00002a00-0000-1000-8000-00805f9b34fb")[0]
+                self.bleGapDeviceName + self.bleGattPostfix)[0]
         try:
             print("Device name: " + data.decode("utf-8"))
         except AttributeError:
