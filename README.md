@@ -28,26 +28,23 @@ When the devkit is in normal state upon boot-up
 * LED 1 becomes constantly lit if a connection is established
 * the cortex goes to sleep after a certain time of not receiving any connections and then LED 1 is off. hit reset.
 
-# PyBlueZ: Python BLE related
+# Python Bluetooth libraries
 
+## PyBlueZ: Python BLE related
 
+https://github.com/karulis/pybluez
+
+Extention to bluez.
 PyBlueZ python scripts use gattlib which doesn't seem to have very good documentation.
 Reading https://github.com/matthewelse/pygattlib/blob/master/src/gattlib.cpp to decode what the various arguments mean for each function
 some rudimentary documentation here:
 https://bitbucket.org/OscarAcena/pygattlib/overview
 
-# bluePy: Python BLE related
-
-
-bluez python library documentation here
-https://github.com/IanHarvey/bluepy/blob/master/docs/
-
-
-## gitWorkspace/pybluez/examples/advanced
+### gitWorkspace/pybluez/examples/advanced
 
 this folder contains basic bluetooth code (not BLE code)
 
-## gitWorkspace/pybluez/examples/ble
+### gitWorkspace/pybluez/examples/ble
 
 this folder contains BLE related example code. This code is slightly modified from source
  * read_name.py: requester.connect() is given optional argument 'random' (random channel rather than public channel) otherwise connection request fails with devkit
@@ -55,6 +52,17 @@ this folder contains BLE related example code. This code is slightly modified fr
 
 The scan.py needs to be executed as root.
 
-## gitWorkspace/pygattlib/examples
+### gitWorkspace/pygattlib/examples
 
 this folder contains BLE related example code. Better than pybluez/examples/ble. It will also need the same modifications as for pybluez (above).
+
+## bluePy: Python BLE related
+
+https://github.com/IanHarvey/bluepy
+
+also extension to bluez
+
+some library documentation here
+https://github.com/IanHarvey/bluepy/blob/master/docs/
+
+
