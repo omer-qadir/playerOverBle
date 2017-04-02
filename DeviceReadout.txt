@@ -1,0 +1,30 @@
+Discovered device c5:90:d7:25:09:80
+Device c5:90:d7:25:09:80 (random), RSSI=-55 dB
+  Short Local Name = Roomba
+  Flags = 05
+  Complete 128b Services = 9ecadc240ee5a9e093f3a3b50100406e
+[<bluepy.btle.Service instance at 0x7fd3aa56bc68>, <bluepy.btle.Service instance at 0x7fd3aa56bb90>, <bluepy.btle.Service instance at 0x7fd3aa56bd40>]
+Service <uuid=Generic Attribute handleStart=8 handleEnd=8>
+Service <uuid=Generic Access handleStart=1 handleEnd=7>
+Service <uuid=6e400001-b5a3-f393-e0a9-e50e24dcca9e handleStart=9 handleEnd=65535>
+[<bluepy.btle.Characteristic instance at 0x7fd3aa56be18>, <bluepy.btle.Characteristic instance at 0x7fd3aa56bf38>, <bluepy.btle.Characteristic instance at 0x7fd3aa56bfc8>, <bluepy.btle.Characteristic instance at 0x7fd3aa56f098>, <bluepy.btle.Characteristic instance at 0x7fd3aa56f128>]
+Characteristic <Device Name>
+Characteristic <Appearance>
+Characteristic <Peripheral Preferred Connection Parameters>
+Characteristic <6e400003-b5a3-f393-e0a9-e50e24dcca9e>
+Characteristic <6e400002-b5a3-f393-e0a9-e50e24dcca9e>
+[<bluepy.btle.Descriptor instance at 0x7fd3aa56f1b8>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f248>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f368>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f3f8>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f488>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f5a8>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f638>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f6c8>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f758>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f7e8>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f878>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f908>, <bluepy.btle.Descriptor instance at 0x7fd3aa56f998>, <bluepy.btle.Descriptor instance at 0x7fd3aa56fa70>]
+Descriptor <Primary Service Declaration>
+Descriptor <Characteristic Declaration>
+Descriptor <Device Name>
+Descriptor <Characteristic Declaration>
+Descriptor <Appearance>
+Descriptor <Characteristic Declaration>
+Descriptor <Peripheral Preferred Connection Parameters>
+Descriptor <Primary Service Declaration>
+Descriptor <Primary Service Declaration>
+Descriptor <Characteristic Declaration>
+Descriptor <6e400003-b5a3-f393-e0a9-e50e24dcca9e>
+Descriptor <Client Characteristic Configuration>
+Descriptor <Characteristic Declaration>
+Descriptor <6e400002-b5a3-f393-e0a9-e50e24dcca9e>
