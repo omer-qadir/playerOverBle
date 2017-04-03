@@ -62,7 +62,7 @@ https://github.com/IanHarvey/bluepy
 
 also extension to bluez
 
-some library documentation here
-https://github.com/IanHarvey/bluepy/blob/master/docs/
+some library documentation here 
+http://ianharvey.github.io/bluepy-doc/
 
 
