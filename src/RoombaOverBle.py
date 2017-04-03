@@ -2,7 +2,7 @@ from __future__ import print_function
 from bluepy.btle import Peripheral, Scanner, DefaultDelegate, Debugging
 from ScanDelegate import ScanDelegate
 
-class RoombaOverBle:
+class RoombaOverBle(Peripheral):
     """ Derived class from Peripheral class. This handles connection for Roomba device """
 
     DebugLevel = 0
@@ -10,9 +10,9 @@ class RoombaOverBle:
 
     def __init__(self, DebugLevel=0, ScanTimeout=3.0):
         """ Constructor """
+        Peripheral.__init__(self)
         self.DebugLevel = DebugLevel
         self._ScanTimeout = ScanTimeout
-        self.peripheral = None
 
         Debugging = DebugLevel != 0     # global variable in bluepy.btle
 
@@ -41,23 +41,23 @@ class RoombaOverBle:
             print (RuntimeWarning.args)
             raise
         else:
-            self.peripheral = Peripheral (deviceScanEntry)
+            self.connect(deviceScanEntry)
 
     def connectWithRoomba(self):
         self._connectWithDevice ("Roomba")
 
     def dumpBleTable(self):
-        roombaServices = self.peripheral.getServices()
+        roombaServices = self.getServices()
         print (roombaServices)
         for currentService in roombaServices:
             print (currentService)
     
-        roombaCharacteristics = self.peripheral.getCharacteristics()
+        roombaCharacteristics = self.getCharacteristics()
         print (roombaCharacteristics)
         for currentCharacteristics in roombaCharacteristics:
             print (currentCharacteristics)
     
-        roombaDescriptors = self.peripheral.getDescriptors()
+        roombaDescriptors = self.getDescriptors()
         print (roombaDescriptors)
         for currentDescriptors in roombaDescriptors:
             print (currentDescriptors)
