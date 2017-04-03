@@ -8,7 +8,7 @@ class RoombaOverBle:
     DebugLevel = 0
     _ScanTimeout = 10.0
 
-    def __init__(self, DebugLevel=99, ScanTimeout=2.0):
+    def __init__(self, DebugLevel=0, ScanTimeout=3.0):
         """ Constructor """
         self.DebugLevel = DebugLevel
         self._ScanTimeout = ScanTimeout
@@ -64,7 +64,7 @@ class RoombaOverBle:
 
 if __name__ == '__main__':
 
-    roombaOverBle = RoombaOverBle()
+    roombaOverBle = RoombaOverBle(DebugLevel=99)
     roombaOverBle.connectWithRoomba()
     roombaOverBle.dumpBleTable()
 
