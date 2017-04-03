@@ -44,9 +44,11 @@ class RoombaOverBle(Peripheral):
             self.connect(deviceScanEntry)
 
     def connectWithRoomba(self):
+        """ establish BLE connection Roomba device. Assumes Roombas has deviceName == Roomba """
         self._connectWithDevice ("Roomba")
 
     def dumpBleTable(self):
+        """ Debug function... simply dumps entire contents of the remote BLE device """
         roombaServices = self.getServices()
         print (roombaServices)
         for currentService in roombaServices:
