@@ -13,6 +13,8 @@ class RoombaOverBle(Peripheral):
         Peripheral.__init__(self)
         self.DebugLevel = DebugLevel
         self._ScanTimeout = ScanTimeout
+        self.txToRoombaCharacteristic = None
+        self.rxFromRoombaCharacteristic = None
 
         Debugging = DebugLevel != 0     # global variable in bluepy.btle
 
@@ -64,9 +66,39 @@ class RoombaOverBle(Peripheral):
         for currentDescriptors in roombaDescriptors:
             print (currentDescriptors)
 
+    def _findCharacteristic(self, characteristicsID):
+        """ Parse all characteristics and locate the one with the given UUID """
+        roombaCharacteristics = self.getCharacteristics()
+        if (self.DebugLevel >= 3):
+            print (roombaCharacteristics)
+        for currentCharacteristics in roombaCharacteristics:
+            if (self.DebugLevel >= 2):
+                print (currentCharacteristics.getHandle(), currentCharacteristics)
+            if (currentCharacteristics.uuid == characteristicsID):
+                if (self.DebugLevel >= 2):
+                    print ("found", currentCharacteristics)
+                return currentCharacteristics
+
+        return None
+
+    def findTxCharacteristic(self):
+        """ Find characteristic which has UUID 6e400002-b5a3-f393-e0a9-e50e24dcca9e """
+        self.txToRoombaCharacteristic = self._findCharacteristic("6e400002-b5a3-f393-e0a9-e50e24dcca9e")
+
+    def findRxCharacteristic(self):
+        """ Find characteristic which has UUID 6e400003-b5a3-f393-e0a9-e50e24dcca9e """
+        self.rxFromRoombaCharacteristic = self._findCharacteristic("6e400003-b5a3-f393-e0a9-e50e24dcca9e")
+
 if __name__ == '__main__':
 
     roombaOverBle = RoombaOverBle(DebugLevel=99)
     roombaOverBle.connectWithRoomba()
-    roombaOverBle.dumpBleTable()
+    #roombaOverBle.dumpBleTable()
+    roombaOverBle.findTxCharacteristic()
+    roombaOverBle.findRxCharacteristic()
+    print (roombaOverBle.txToRoombaCharacteristic.supportsRead() )
+    print (roombaOverBle.txToRoombaCharacteristic.propertiesToString() )
+    print (roombaOverBle.rxFromRoombaCharacteristic.supportsRead() )
+    print (roombaOverBle.rxFromRoombaCharacteristic.propertiesToString() )
+    roombaOverBle.txToRoombaCharacteristic.write("c")
 
