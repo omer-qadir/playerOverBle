@@ -58,11 +58,14 @@ this folder contains BLE related example code. Better than pybluez/examples/ble.
 
 ## bluePy: Python BLE related
 
+Install from my own fork unless original authors accept pull request https://github.com/IanHarvey/bluepy/pull/180
+https://github.com/omer-qadir/bluepy
+
 https://github.com/IanHarvey/bluepy
 
 also extension to bluez
 
-some library documentation here
-https://github.com/IanHarvey/bluepy/blob/master/docs/
+some library documentation here 
+http://ianharvey.github.io/bluepy-doc/
 
 
