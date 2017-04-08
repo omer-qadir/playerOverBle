@@ -73,6 +73,13 @@ also extension to bluez
 some library documentation here 
 http://ianharvey.github.io/bluepy-doc/
 
+# libPlayerC over py
+
+* http://player-stage-manual.readthedocs.io/en/stable/CONTROLLER_PYCPP/
+* http://player-stage-manual.readthedocs.io/en/stable/CONTROLLER_PYC/
+* http://playerstage.sourceforge.net/doc/Player-1.6.5/player-html/group__player__clientlib__libplayerc__py.php
+
+
 
 # TODO
 * Implement TCP layer to receive packets from player client
