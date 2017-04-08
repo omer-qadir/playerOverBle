@@ -1,3 +1,8 @@
+#installation
+After looking at both pyblue vs bluepy, settled upon bluepy. So bluepy needs to be installed.
+The code in this repo depends upon a slight update to the bluepy library, which will hopefully be integrated eventually. Until [this pull-request](https://github.com/IanHarvey/bluepy/pull/180) is approved, the following fork can be used:
+https://github.com/omer-qadir/bluepy
+
 # playerOverBle
 Interface layer to translate player server (ref player/stage) from TCP to BLE
 
