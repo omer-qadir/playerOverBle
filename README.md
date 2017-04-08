@@ -74,3 +74,5 @@ some library documentation here
 http://ianharvey.github.io/bluepy-doc/
 
 
+# TODO
+* Implement TCP layer to receive packets from player client
